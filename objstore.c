@@ -3,8 +3,7 @@
 /*
 Returns the object ID.  -1 (invalid), 0, 1 - reserved
 */
-long find_object_id(const char *key, struct objfs_state *objfs)
-{
+long find_object_id(const char *key, struct objfs_state *objfs) {
     return -1;   
 }
 
@@ -15,8 +14,7 @@ long find_object_id(const char *key, struct objfs_state *objfs)
   Return value: Success --> object ID of the newly created object
                 Failure --> -1
 */
-long create_object(const char *key, struct objfs_state *objfs)
-{
+long create_object(const char *key, struct objfs_state *objfs) {
    return -1;
 }
 /*
@@ -25,8 +23,7 @@ long create_object(const char *key, struct objfs_state *objfs)
   Return value: Success --> 0
                 Failure --> -1
 */
-long release_object(int objid, struct objfs_state *objfs)
-{
+long release_object(int objid, struct objfs_state *objfs) {
     return 0;
 }
 
@@ -36,8 +33,7 @@ long release_object(int objid, struct objfs_state *objfs)
   Return value: Success --> 0
                 Failure --> -1
 */
-long destroy_object(const char *key, struct objfs_state *objfs)
-{
+long destroy_object(const char *key, struct objfs_state *objfs) {
     return -1;
 }
 
@@ -48,8 +44,7 @@ long destroy_object(const char *key, struct objfs_state *objfs)
                 Failure --> -1
 */
 
-long rename_object(const char *key, const char *newname, struct objfs_state *objfs)
-{
+long rename_object(const char *key, const char *newname, struct objfs_state *objfs) {
    
    return -1;
 }
@@ -59,8 +54,7 @@ long rename_object(const char *key, const char *newname, struct objfs_state *obj
   Return value: Success --> #of bytes written
                 Failure --> -1
 */
-long objstore_write(int objid, const char *buf, int size, struct objfs_state *objfs)
-{
+long objstore_write(int objid, const char *buf, int size, struct objfs_state *objfs) {
    return -1;
 }
 
@@ -69,8 +63,7 @@ long objstore_write(int objid, const char *buf, int size, struct objfs_state *ob
   Return value: Success --> #of bytes written
                 Failure --> -1
 */
-long objstore_read(int objid, char *buf, int size, struct objfs_state *objfs)
-{
+long objstore_read(int objid, char *buf, int size, struct objfs_state *objfs) {
    return -1;
 }
 
@@ -79,16 +72,14 @@ long objstore_read(int objid, char *buf, int size, struct objfs_state *objfs)
   Fillup buf->st_size and buf->st_blocks correctly
   See man 2 stat 
 */
-int fillup_size_details(struct stat *buf)
-{
+int fillup_size_details(struct stat *buf) {
    return -1;
 }
 
 /*
    Set your private pointeri, anyway you like.
 */
-int objstore_init(struct objfs_state *objfs)
-{
+int objstore_init(struct objfs_state *objfs) {
    dprintf("Done objstore init\n");
    return 0;
 }
@@ -96,8 +87,7 @@ int objstore_init(struct objfs_state *objfs)
 /*
    Cleanup private data. FS is being unmounted
 */
-int objstore_destroy(struct objfs_state *objfs)
-{
+int objstore_destroy(struct objfs_state *objfs) {
    dprintf("Done objstore destroy\n");
    return 0;
 }

@@ -8,8 +8,9 @@ BUILD
 -----
 $make
 
-Note that, by default the logging is enabled (into objfs.log file). Remove -DDBG from the Makefile to 
-disable logging.
+ - Note that, by default the logging is enabled (into objfs.log file). Remove -DDBG from the Makefile to 
+   disable logging. 
+ - To enable caches, add -DCACHE in the Makefile. Refer the example directory
 
 MOUNT
 -----

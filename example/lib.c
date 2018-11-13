@@ -38,7 +38,6 @@ extern int do_init(struct objfs_state *objfs)
        perror("mmap");
        return -1;
    }
-   objfs->cachesize = CACHE_SIZE;
    return 0;
 }
 

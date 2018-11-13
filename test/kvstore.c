@@ -26,6 +26,7 @@ long put_key(char *key, char *val, int size)
       perror("write");
       return -1;
    }
+   close(fd);
    return 0;    
    
 }
@@ -56,6 +57,7 @@ long get_key(char *key, char *val)
           perror("read");
           return -1;
       }
+   close(fd);
    return 0;    
    
 }

@@ -247,7 +247,7 @@ int main(int argc, char *argv[])
          
     printf("%s\n", __func__);
     retval = fuse_main(argc, argv, &objfs_operations, objfs);
-    printf("fuse main returned %d\n", retval);
+    dprintf("fuse main returned %d\n", retval);
 
     return retval;
 }
