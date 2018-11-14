@@ -55,8 +55,9 @@ int objfs_unlink(const char *key)
 int objfs_rename_key(const char *oldkey, const char *newkey)
 {
     dprintf("%s: oldkey=%s\n", __func__, oldkey);
-    rename_object(oldkey, newkey, objfs); 
-    return -EINVAL;
+    if(rename_object(oldkey+1, newkey+1, objfs) < 0)
+         return -EINVAL;
+    return 0;
 }
 
 /*
@@ -217,6 +218,7 @@ static struct fuse_operations objfs_operations = {
   .release = objfs_release,
   .init = objfs_init,
   .destroy = objfs_destroy,
+  .rename = objfs_rename_key,
 //  .opendir = objfs_opendir,
 //  .readdir = objfs_readdir,
 //  .releasedir = objfs_releasedir,

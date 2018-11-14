@@ -174,7 +174,7 @@ long destroy_object(const char *key, struct objfs_state *objfs)
 {
     int ctr;
     struct object *obj = objs;
-    for(ctr=0; ctr < MAX_OBJS; ++ctr){
+    for(ctr=0; ctr < MAX_OBJS; ++ctr) {
           if(obj->id && !strcmp(obj->key, key)){
                remove_object_cached(obj);
                obj->id = 0;
