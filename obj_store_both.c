@@ -260,6 +260,7 @@ long destroy_object(const char *key, struct objfs_state *objfs) {
 			curr -> indirect[i] = 0;
 			free_mp(tmp, BLOCK_SIZE);
 		}
+	curr->id = 0;
 	return 0;
 }
 
