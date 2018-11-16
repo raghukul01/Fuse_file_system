@@ -42,7 +42,6 @@ Cache implementation follows a simple rule
 if we want to store block no x, then store it it cache + x%MAX_CACHE
 if this place is already filled and existing block is dirty, then copy that data to disk
 and introduce this new page.
-
 write is done directly to cache and dirty bit is set to 1
 */
 struct cache_struct {
@@ -180,7 +179,6 @@ long find_object_id(const char *key, struct objfs_state *objfs) {
 /*
 	Creates a new object with obj.key=key. Object ID must be >=2.
 	Must check for duplicates.
-
 	Return value: Success --> object ID of the newly created object
 				Failure --> -1
 */
@@ -222,7 +220,6 @@ long release_object(int objid, struct objfs_state *objfs) {
 
 /*
 	Destroys an object with obj.key=key. Object ID is ensured to be >=2.
-
 	Return value: Success --> 0
 				Failure --> -1
 */
@@ -514,9 +511,6 @@ int objstore_destroy(struct objfs_state *objfs) {
 		}
 	}
 	for(int i = 0;i < NUM_CACHE_BLOCKS;i++) {
-		struct cache_struct *cache = ((struct cache_struct *)objfs -> cache) + i;
-		if(cache->dirty)
-			dprintf("%s\n", cache->data);
 		obj_sync(objfs, i);
 		cache_init(objfs, i);
 	}
