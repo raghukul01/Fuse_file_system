@@ -1,10 +1,11 @@
 objfs_init
 Done objstore init
+objfs_getattr: key=/
+objfs_getattr: key=/.xdg-volume-info
+objfs_getattr: key=/
+objfs_getattr: key=/autorun.inf
 objfs_getattr: key=/.Trash
 objfs_getattr: key=/.Trash-1000
-objfs_getattr: key=/.xdg-volume-info
-objfs_getattr: key=/autorun.inf
-objfs_getattr: key=/
 objfs_getattr: key=/
 objfs_getattr: key=/
 objfs_getattr: key=/
@@ -28,26 +29,26 @@ objfs_getattr: key=/
 objfs_getattr: key=/
 objfs_getattr: key=/
 objfs_getattr: key=/autorun.inf
-objfs_getattr: key=/
 objfs_getattr: key=/
 objfs_getattr: key=/CS330###1
 objfs_create: key=/CS330###1
 objfs_getattr: key=/CS330###1
 objfs_write: key=/CS330###1 fh=2
 Doing write size = 32
+objfs_getattr: key=/
 objfs_release: key=/CS330###1
 objfs_getattr: key=/CS330###2
 objfs_create: key=/CS330###2
 objfs_getattr: key=/CS330###2
 objfs_write: key=/CS330###2 fh=3
 Doing write size = 32
+objfs_getattr: key=/
 objfs_release: key=/CS330###2
 objfs_getattr: key=/CS330###3
 objfs_create: key=/CS330###3
 objfs_getattr: key=/CS330###3
 objfs_write: key=/CS330###3 fh=4
 Doing write size = 32
-objfs_getattr: key=/
 objfs_release: key=/CS330###3
 objfs_getattr: key=/CS330###4
 objfs_create: key=/CS330###4
@@ -60,9 +61,9 @@ objfs_create: key=/CS330###5
 objfs_getattr: key=/CS330###5
 objfs_write: key=/CS330###5 fh=6
 Doing write size = 32
-objfs_getattr: key=/
 objfs_release: key=/CS330###5
 objfs_getattr: key=/CS330###6
+objfs_getattr: key=/
 objfs_create: key=/CS330###6
 objfs_getattr: key=/CS330###6
 objfs_write: key=/CS330###6 fh=7
@@ -79,7 +80,6 @@ objfs_create: key=/CS330###8
 objfs_getattr: key=/CS330###8
 objfs_write: key=/CS330###8 fh=9
 Doing write size = 32
-objfs_getattr: key=/
 objfs_release: key=/CS330###8
 objfs_getattr: key=/
 objfs_getattr: key=/
@@ -87,146 +87,50 @@ objfs_getattr: key=/CS330###1
 objfs_open: key=/CS330###1
 objfs_read: key=/CS330###1 fh=2
 Doing read size = 4096
+value in buffer: I am 1. Registered to CS330.
 objfs_release: key=/CS330###1
 objfs_getattr: key=/CS330###2
 objfs_open: key=/CS330###2
 objfs_read: key=/CS330###2 fh=3
 Doing read size = 4096
+value in buffer: I am 2. Registered to CS330.
 objfs_release: key=/CS330###2
 objfs_getattr: key=/CS330###3
 objfs_open: key=/CS330###3
 objfs_read: key=/CS330###3 fh=4
 Doing read size = 4096
+value in buffer: I am 3. Registered to CS330.
 objfs_release: key=/CS330###3
 objfs_getattr: key=/CS330###4
 objfs_open: key=/CS330###4
 objfs_read: key=/CS330###4 fh=5
 Doing read size = 4096
+value in buffer: I am 4. Registered to CS330.
 objfs_release: key=/CS330###4
 objfs_getattr: key=/CS330###5
 objfs_open: key=/CS330###5
 objfs_read: key=/CS330###5 fh=6
 Doing read size = 4096
+value in buffer: I am 5. Registered to CS330.
 objfs_release: key=/CS330###5
 objfs_getattr: key=/CS330###6
 objfs_open: key=/CS330###6
 objfs_read: key=/CS330###6 fh=7
 Doing read size = 4096
+value in buffer: I am 6. Registered to CS330.
 objfs_release: key=/CS330###6
 objfs_getattr: key=/CS330###7
 objfs_open: key=/CS330###7
 objfs_read: key=/CS330###7 fh=8
 Doing read size = 4096
+value in buffer: I am 7. Registered to CS330.
 objfs_release: key=/CS330###7
 objfs_getattr: key=/CS330###8
 objfs_open: key=/CS330###8
 objfs_read: key=/CS330###8 fh=9
 Doing read size = 4096
-objfs_release: key=/CS330###8
-objfs_getattr: key=/
-objfs_getattr: key=/CS330###1
-objfs_open: key=/CS330###1
-objfs_read: key=/CS330###1 fh=2
-Doing read size = 4096
-objfs_release: key=/CS330###1
-objfs_getattr: key=/CS330###2
-objfs_open: key=/CS330###2
-objfs_read: key=/CS330###2 fh=3
-Doing read size = 4096
-objfs_release: key=/CS330###2
-objfs_getattr: key=/CS330###3
-objfs_open: key=/CS330###3
-objfs_read: key=/CS330###3 fh=4
-Doing read size = 4096
-objfs_release: key=/CS330###3
-objfs_getattr: key=/CS330###4
-objfs_open: key=/CS330###4
-objfs_read: key=/CS330###4 fh=5
-Doing read size = 4096
-objfs_release: key=/CS330###4
-objfs_getattr: key=/CS330###5
-objfs_open: key=/CS330###5
-objfs_read: key=/CS330###5 fh=6
-Doing read size = 4096
-objfs_getattr: key=/CS330###6
-objfs_release: key=/CS330###5
-objfs_open: key=/CS330###6
-objfs_read: key=/CS330###6 fh=7
-Doing read size = 4096
-objfs_release: key=/CS330###6
-objfs_getattr: key=/CS330###7
-objfs_open: key=/CS330###7
-objfs_read: key=/CS330###7 fh=8
-Doing read size = 4096
-objfs_release: key=/CS330###7
-objfs_getattr: key=/CS330###8
-objfs_open: key=/CS330###8
-objfs_read: key=/CS330###8 fh=9
-Doing read size = 4096
+value in buffer: I am 8. Registered to CS330.
 objfs_release: key=/CS330###8
 objfs_getattr: key=/
 objfs_getattr: key=/
-objfs_getattr: key=/CS330###1
-objfs_unlink: key=/CS330###1
-objfs_getattr: key=/
-objfs_getattr: key=/CS330###1
-objfs_getattr: key=/CS330###2
-objfs_open: key=/CS330###2
-objfs_read: key=/CS330###2 fh=3
-Doing read size = 4096
-objfs_release: key=/CS330###2
-objfs_getattr: key=/CS330###3
-objfs_open: key=/CS330###3
-objfs_read: key=/CS330###3 fh=4
-Doing read size = 4096
-objfs_release: key=/CS330###3
-objfs_getattr: key=/CS330###4
-objfs_open: key=/CS330###4
-objfs_read: key=/CS330###4 fh=5
-Doing read size = 4096
-objfs_release: key=/CS330###4
-objfs_getattr: key=/CS330###5
-objfs_open: key=/CS330###5
-objfs_read: key=/CS330###5 fh=6
-Doing read size = 4096
-objfs_release: key=/CS330###5
-objfs_getattr: key=/CS330###6
-objfs_open: key=/CS330###6
-objfs_read: key=/CS330###6 fh=7
-Doing read size = 4096
-objfs_release: key=/CS330###6
-objfs_getattr: key=/CS330###7
-objfs_open: key=/CS330###7
-objfs_read: key=/CS330###7 fh=8
-Doing read size = 4096
-objfs_release: key=/CS330###7
-objfs_getattr: key=/CS330###8
-objfs_open: key=/CS330###8
-objfs_read: key=/CS330###8 fh=9
-Doing read size = 4096
-objfs_release: key=/CS330###8
-objfs_getattr: key=/
-objfs_getattr: key=/CS330###1
-objfs_getattr: key=/CS330###1
-objfs_create: key=/CS330###1
-objfs_getattr: key=/CS330###1
-objfs_write: key=/CS330###1 fh=2
-Doing write size = 64
-objfs_release: key=/CS330###1
-objfs_getattr: key=/
-objfs_getattr: key=/CS330###2
-objfs_unlink: key=/CS330###2
-objfs_getattr: key=/CS330###2
-objfs_create: key=/CS330###2
-objfs_getattr: key=/CS330###2
-objfs_write: key=/CS330###2 fh=3
-Doing write size = 64
-objfs_release: key=/CS330###2
-objfs_getattr: key=/
-objfs_getattr: key=/
-objfs_getattr: key=/
-objfs_getattr: key=/
-objfs_getattr: key=/
-objfs_getattr: key=/.git
-objfs_getattr: key=/.git
 objfs_getattr: key=/

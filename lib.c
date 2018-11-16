@@ -14,7 +14,7 @@ extern int do_init(struct objfs_state *objfs)
        return -1;
    }
 
-   objfs->blkdev = open("disk.img", O_RDWR | O_SYNC | O_DIRECT);
+   objfs->blkdev = open("disk.img", O_RDWR |   O_DIRECT);
    if(objfs->blkdev < 0){
        perror("blkdev open"); 
        return -1;
@@ -38,7 +38,6 @@ extern int do_init(struct objfs_state *objfs)
        perror("mmap");
        return -1;
    }
-   objfs->cachesize = CACHE_SIZE;
    return 0;
 }
 
@@ -50,6 +49,7 @@ int read_block(struct objfs_state *objfs, long block_offset, char *buf)
           return -1;
      }
     block_offset <<= BLOCK_SHIFT;
+    #if 0
     if(lseek(objfs->blkdev, block_offset, SEEK_SET) < 0){
           dprintf("%s: lseek error\n", __func__);
           return -1;
@@ -58,6 +58,12 @@ int read_block(struct objfs_state *objfs, long block_offset, char *buf)
           dprintf("%s: read error\n", __func__);
           return -1;
     }
+    #else
+    if(pread(objfs->blkdev, buf, BLOCK_SIZE, block_offset) < 0){
+          dprintf("%s: read error\n", __func__);
+          return -1;
+    }
+    #endif
     return 0;
 }
 int write_block(struct objfs_state *objfs, long block_offset, char *buf)
@@ -68,6 +74,7 @@ int write_block(struct objfs_state *objfs, long block_offset, char *buf)
           return -1;
      }
     block_offset <<= BLOCK_SHIFT;
+    #if 0
     if(lseek(objfs->blkdev, block_offset, SEEK_SET) < 0){
           dprintf("%s: lseek error\n", __func__);
           return -1;
@@ -76,5 +83,15 @@ int write_block(struct objfs_state *objfs, long block_offset, char *buf)
           dprintf("%s: read error\n", __func__);
           return -1;
     }
+    #else
+
+  
+
+     if(pwrite(objfs->blkdev, buf, BLOCK_SIZE, block_offset) < 0){
+  
+          dprintf("%s: read error\n", __func__);
+          return -1;
+     }
+    #endif
     return 0;
 }

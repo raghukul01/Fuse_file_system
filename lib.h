@@ -30,6 +30,7 @@ struct objfs_state{
     char *cache;
     int cachesize;              
     void *objstore_data;
+    long disksize;  //# of blocks
 }; 
 
 extern int do_init(struct objfs_state *objfs);
@@ -44,8 +45,8 @@ extern long create_object(const char *, struct objfs_state *);
 extern long release_object(int objid, struct objfs_state *objfs);
 extern long destroy_object(const char *, struct objfs_state *);
 extern long rename_object(const char *, const char *, struct objfs_state *);
-extern long objstore_write(int objid, const char *, int, struct objfs_state *);
-extern long objstore_read(int objid, char *, int, struct objfs_state *);
-extern int  fillup_size_details(struct stat *buf);
+extern long objstore_write(int objid, const char *, int, struct objfs_state *, off_t offset);
+extern long objstore_read(int objid, char *, int, struct objfs_state *, off_t offset);
+extern int  fillup_size_details(struct stat *buf, struct objfs_state *);
 
 #endif

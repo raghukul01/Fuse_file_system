@@ -33,7 +33,7 @@ int objfs_getattr(const char *key, struct stat *statbuf)
            if(retval < 0)
                  return -ENOENT;
            statbuf->st_ino = retval;
-           if(fillup_size_details(statbuf) < 0)
+           if(fillup_size_details(statbuf, objfs) < 0)
                 return -EBADF;
     }
     statbuf->st_uid = getuid();
@@ -56,7 +56,7 @@ int objfs_rename_key(const char *oldkey, const char *newkey)
 {
     dprintf("%s: oldkey=%s\n", __func__, oldkey);
     if(rename_object(oldkey+1, newkey+1, objfs) < 0)
-         return -EINVAL;
+        return -EINVAL;
     return 0;
 }
 
@@ -98,7 +98,7 @@ int objfs_read(const char *key, char *buf, size_t size, off_t offset, struct fus
 {
     int retval;
     dprintf("%s: key=%s fh=%ld\n", __func__, key, fi->fh);
-    retval = objstore_read(fi->fh, buf, size, objfs);
+    retval = objstore_read(fi->fh, buf, size, objfs, offset);
     if(retval < 0)
          return -EINVAL;
     return retval;
@@ -112,7 +112,7 @@ int objfs_write(const char *key, const char *buf, size_t size, off_t offset,
 {
     int retval;
     dprintf("%s: key=%s fh=%ld\n", __func__, key, fi->fh);
-    retval = objstore_write(fi->fh, buf, size, objfs);
+    retval = objstore_write(fi->fh, buf, size, objfs, offset);
     if(retval < 0)
          return -EINVAL;
     return retval;
